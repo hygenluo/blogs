@@ -15,9 +15,6 @@ on:
       - 'spec/**'
       - 'data/**'
       - 'images/**'
-  repository_dispatch:
-    types:
-      - content-updated
   workflow_dispatch:  # 支持手动触发
 
 jobs:
