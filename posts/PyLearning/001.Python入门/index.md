@@ -234,3 +234,8 @@ age = 18
 print(f"My name is {name}, age is {age}")         # 推荐
 print("My name is {}, age is {}".format(name, age))
 ```
+输出：
+```
+My name is Tom, age is 18
+My name is Tom, age is 18
+```
