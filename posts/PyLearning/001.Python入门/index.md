@@ -81,3 +81,156 @@ print(a, b, c)
 | `bool` | 布尔 | 布尔类型，描述真和假，如：`True` `False` |
 | `NoneType` | 空值 | 表示空或无值，仅包含一个值 `None` |
 ## 2.1. 数据类型常用方法
+### 2.1.1. type()
+我们可以通过`type()`来获取数据的类型
+```python
+print(type(1))
+```
+输出: 
+```
+<class 'int'>
+```
+意思是1属于整型类，同理可以试试`3.14`, `"hello"`等数据的类型。
+### 2.1.2. isinstance()
+我们可以通过`isinstance()`来检查某个数据是否是我们指定的数据类型。
+```python
+print(isinstance(1, int))
+print(isinstance(1, float))
+```
+输出：
+```
+True
+False
+```
+意思是1属于整形类，1不属于浮点型。
+## 2.2. 字符串
+### 2.2.1. 字符串的定义
+
+字符串，顾名思义，就是由一系列字符组成的数据类型。在编程中，我们常用它来表示名字、短语、句子等文本内容。
+
+在 Python 中，字符串不仅能存储单个字母，还可以包含数字、符号，甚至是空格。字符串是编程中最常用、最基础的数据类型之一。
+
+在Python中，字符串可以用单引号（`'`）、双引号（`"`）、或三引号（`'''` 或 `"""`）括起来。字符串中的每一个字符都有其对应的索引。
+
+例如：
+
+```python
+s1 = 'hello'
+s2 = "world"
+s3 = """多行字符串
+可以换行
+"""
+print(s1)
+print(s2)
+print(s3)
+```
+输出：
+```
+hello
+world
+多行字符串
+可以换行
+```
+#### 字符串中的特殊字符
+
+字符串中有一些特殊字符，常用的有`\n`(换行)、`\t`(制表符)、`\\`(反斜杠)、`\"`(双引号)、`\'`(单引号)等。
+
+例如：
+
+```python
+s = "Hello\nPython"
+print(s)
+s2 = "Hello\tPython"
+print(s2)
+s3 = "他说：\"你好，Python!\""
+print(s3)
+```
+输出：
+```
+Hello
+Python
+Hello	Python
+他说："你好，Python!"
+```
+
+#### 转义与原始字符串
+
+有时我们不希望字符串中的`\`被当作特殊字符处理，可以在字符串前面加上`r`，变为原始字符串（raw string）。
+
+```python
+path = "C:\\Users\\Python"
+print(path)
+raw_path = r"C:\Users\Python"
+print(raw_path)
+```
+输出：
+```
+C:\Users\Python
+C:\Users\Python
+```
+
+原始字符串常用于正则表达式、Windows路径等场景。
+
+### 2.2.2. 字符串常用操作
+
+#### 拼接字符串
+
+可以使用`+`号拼接两个字符串，也可以用`*`重复字符串。
+
+```python
+a = "Hello"
+b = "Python"
+c = a + " " + b
+d = a * 3
+print(c)  # 输出: Hello Python
+print(d)  # 输出: HelloHelloHello
+```
+
+#### 获取字符串长度
+
+使用`len()`函数可以获取字符串的长度。
+
+```python
+msg = "Python"
+print(len(msg))  # 输出: 6
+```
+
+#### 字符串索引与切片
+
+通过索引获取字符串中的某个字符，索引从0开始。通过切片可以获取一部分字符串。
+
+```python
+s = "abcdef"
+print(s[0])    # 输出: a
+print(s[-1])   # 输出: f
+print(s[2:5])  # 输出: cde
+print(s[:3])   # 输出: abc
+```
+
+#### 字符串常用方法
+
+- `upper()`：转换成大写
+- `lower()`：转换成小写
+- `strip()`：去除首尾空白
+- `replace(a, b)`：替换字符串中的a为b
+- `split(sep)`：按照分隔符分割为列表
+
+```python
+text = "  Python,Hello  "
+print(text.upper())        # 输出:   PYTHON,HELLO  
+print(text.lower())        # 输出:   python,hello  
+print(text.strip())        # 输出: Python,Hello
+print(text.replace("Hello", "World"))  # 输出:   Python,World  
+print(text.split(","))     # 输出: ['  Python', 'Hello  ']
+```
+
+#### 字符串格式化
+
+可以用`f''`格式化字符串或者用`format()`方法。
+
+```python
+name = "Tom"
+age = 18
+print(f"My name is {name}, age is {age}")         # 推荐
+print("My name is {}, age is {}".format(name, age))
+```
