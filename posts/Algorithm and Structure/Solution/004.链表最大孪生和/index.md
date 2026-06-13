@@ -3,7 +3,7 @@ title: 链表最大孪生和
 author: Hygen
 description: LeetCode-2130
 category: Algorithm and Structure
-tags:[Solution, 双指针, 链表, DFS]
+tags: [Solution, 双指针, 链表, DFS]
 published: 2026-06-14
 ---
 # 题目描述
@@ -17,3 +17,4 @@ published: 2026-06-14
 ## 示例1
 > input: head=[5， 4， 2， 1]
 > output: 6
+解析：
