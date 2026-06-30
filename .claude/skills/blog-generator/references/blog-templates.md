@@ -66,7 +66,7 @@ published: <YYYY-MM-DD>
 6. **数学公式**：用 `$...$`（行内）或 `$$...$$`（块级）LaTeX
 
 
-## 2. Algorithm and Structure (普通题解) 模板
+## 2. DSA Solution (普通题解) 模板
 
 适用于：非 hot100 的 LeetCode 题、面试题、算法练习
 
@@ -76,7 +76,7 @@ published: <YYYY-MM-DD>
 title: <题目名称>
 author: Hygen
 description: <题目来源，如 LeetCode-2130 / 华为2025秋招AI岗笔试题>
-category: Algorithm and Structure
+category: DSA
 tags: [Solution, <技术标签>]
 published: <YYYY-MM-DD>
 ---
@@ -90,7 +90,7 @@ published: <YYYY-MM-DD>
 
 ### 文件命名规则
 - 紧跟已有编号：如已有 `012."气球"的最大数量`，新文章为 `013.<标题>`
-- 文件夹格式：`posts/Algorithm and Structure/Solution/NNN.标题/index.md`
+- 文件夹格式：`posts/DSA/Solution/NNN.标题/index.md`
 
 
 ## 3. Agent / LangGraph 技术教程模板
@@ -253,27 +253,52 @@ published: <YYYY-MM-DD>
 4. 截图文件放在 `assets/` 或 `imgs/` 子文件夹中，引用格式 `![描述](./assets/截图.png)`
 
 
-## 7. 读后感 / 日记 / 随笔模板
+## 8. DSA Knowledge (知识点讲解) 模板
 
-适用于：读书笔记、个人随笔、日常记录
+适用于：算法/数据结构的基础概念讲解（非具体题目），如 Kadane 算法、二分查找原理、动态规划入门等
 
 ### Frontmatter
 ```yaml
 ---
-title: <标题>
+title: <知识点名称>详解  # 如：Kadane 算法详解
 author: Hygen
-description: <类型：学习笔记 / 随笔 / 日记>
+description: <一句话概括知识点>
+category: DSA
+tags: [<相关技术标签>]
 published: <YYYY-MM-DD>
 ---
 ```
 
 ### 正文结构
-自由格式，无需遵循固定模板。建议：
-- 读后感：引用原文 + 个人感悟
-- 日记：日期 + 事项
-- 随笔：自由表达
+```
+# 什么是 <知识点>？
+<通俗解释，用生活化比喻辅助>
 
-### 文件夹
-- 读后感/学习笔记 → `posts/Learning/`
-- 日记 → 可考虑 `posts/Learning/` 或新建 `posts/Diary/`
-- 随笔 → 建议与用户确认
+# 核心直觉
+> 🧠 **直觉理解**：<一句话抓住本质>
+
+# 从 <角度1> 理解
+## 关键定义
+## 推导过程
+## 代码示例
+
+# 从 <角度2> 理解（可选：不同视角）
+...
+
+# 执行过程可视化
+<表格展示算法执行过程>
+
+# 变体与扩展
+<关联变体、推广方向>
+
+# 总结
+<核心收获 + 推荐练习路径>
+```
+
+### 关键写作要求
+1. **不是题解，是概念讲解**——侧重点在"为什么"而非"怎么做"。可以引用具体题目作为例子，但主线是讲概念
+2. **多视角分析**：一个知识点尽量从不同角度解释（如 Kadane 从 DP 和贪心两个视角），帮助读者建立立体的理解
+3. **丰富的直观解释**：大量使用 💡 🧠 ⚠️ 提示框，将抽象概念具象化
+4. **关联与推广**：在"变体与扩展"中指引后续学习路径
+5. **不设编号**：文件夹名直接用英文主题名（如 `kadane`），方便随意扩展
+6. **文件夹格式**：`posts/DSA/Knowledge/<主题名>/index.md`

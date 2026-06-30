@@ -29,7 +29,7 @@
 | Category | 用途 | 对应文件夹 |
 |----------|------|-----------|
 | `hot100` | LeetCode Hot100 题目 | `posts/hot100/` |
-| `Algorithm and Structure` | 算法与数据结构题解（非 hot100） | `posts/Algorithm and Structure/Solution/` |
+| `DSA` | 数据结构与算法（题解 + 知识点） | `posts/DSA/Solution/` 和 `posts/DSA/Knowledge/` |
 | `Agent` | LangGraph/Agent 相关 | `posts/Agent/` |
 | `Guides` | 通用教程/指南 | `posts/guides/` |
 

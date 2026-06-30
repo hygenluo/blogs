@@ -56,7 +56,8 @@ description: >
 | 用户提供的内容 | 博客类型 | 详细模板 |
 |:-:|:-:|:-:|
 | LeetCode 链接含 `top-100-liked` | **Hot100 题解** | 模板 1 |
-| LeetCode 链接不含 hot100 / 面试题 / 算法题 | **Algorithm and Structure 题解** | 模板 2 |
+| LeetCode 链接不含 hot100 / 面试题 / 算法题 | **DSA 题解** | 模板 2 |
+| 算法/数据结构知识点讲解（非具体题目） | **DSA 知识点** | 模板 8 |
 | Agent、LangGraph、RAG 等 AI 框架代码/资料 | **Agent 技术教程** | 模板 3 |
 | Python 基础语法/编程入门内容 | **PyLearning 教程** | 模板 4 |
 | NLP、Transformer、深度学习理论 | **NLP 知识博客** | 模板 5 |
@@ -106,7 +107,9 @@ description: <一句话描述>
 ### 分类 (category) 规则
 
 - Hot100 题解 → `category: hot100`
-- Algorithm and Structure → `category: Algorithm and Structure`
+- Algorithm and Structure → `category: Algorithm and Structure`  → **已废弃，改为 DSA**
+- DSA 题解 (Solution) → `category: DSA`
+- DSA 知识点 (Knowledge) → `category: DSA`
 - Agent 深度技术文章 → `category: Agent`
 - 通用教程 → `category: Guides`
 - **PyLearning / NLP / Learning / 日记 / 随笔 → 通常不加 `category`**（参考已有博客的做法）
@@ -114,7 +117,8 @@ description: <一句话描述>
 ### 描述 (description) 规则
 
 - Hot100: `Leetcode-<题号>`（简洁）
-- 普通题解: 题目来源，如 `LeetCode-2130` 或 `华为2025秋招AI岗笔试题`
+- 普通题解 (DSA): 题目来源，如 `LeetCode-2130` 或 `华为2025秋招AI岗笔试题`
+- DSA 知识点: 一句话概括知识点，如 `深入理解 Kadane 最大子数组和算法`
 - Agent/NLP: 一句话概括文章内容
 - 教程: 简要描述
 - 随笔/日记: `学习笔记` / `随笔` / `日记`
@@ -143,7 +147,16 @@ posts/
 │   ├── 15-动态规划/
 │   ├── 16-多维动态规划/
 │   └── 17-技巧/
-├── Algorithm and Structure/Solution/ ← 普通算法题解
+├── DSA/Solution/              ← 普通算法题解
+├── DSA/Knowledge/            ← 算法与数据结构知识点讲解
+│   ├── kadane/
+│   ├── binary-search/
+│   ├── dynamic-programming/
+│   ├── greedy/
+│   ├── divide-and-conquer/
+│   └── data-structures/
+│       ├── heap/
+│       └── trie/
 ├── Agent/LangGraph/{原理 or 应用}/   ← Agent 教程
 ├── NLP/{主题}/                      ← NLP 知识博客
 ├── PyLearning/{课程编号}_{课程名}/   ← Python 教程
@@ -189,7 +202,8 @@ posts/hot100/01-哈希/001.两数之和/index.md
 
 **命名编号规则**：
 - Hot100: 全局递增编号 `NNN.标题`
-- Algorithm and Structure: 全局递增编号 `NNN.标题`
+- DSA Solution: 全局递增编号 `NNN.标题`
+- DSA Knowledge: 直接用英文主题名，如 `kadane`、`binary-search`（无编号，便于灵活扩展）
 - 其他类型: 可用 `NNN.标题` 或直接用 `标题`
 
 **重要：所有文件夹/文件位置和命名在创建前必须经用户确认。**
@@ -202,8 +216,21 @@ posts/hot100/01-哈希/001.两数之和/index.md
 2. **技术术语**：英文术语保留原样（如 "Transformer"、"Token"），但首次出现时用中文解释
 3. **代码块**：使用标准 markdown 围栏代码块 ```` ```python ````，代码使用 4 空格缩进
 4. **数学公式**：行内用 `$...$`，块级用 `$$...$$`
-5. **语气**：教学性、系统性。用"我们"而非"你"，营造共同探索的感觉
+5. **语气**：像一位有经验的朋友在讲解——亲切、耐心、不装腔作势。用「我们」拉近距离，但允许在需要强调时用「你」直接对话。复杂概念用生活化的比喻辅助理解（如「就像排队买奶茶一样，先来的先服务」）。避免 AI 式的空话套话（如"众所周知""值得注意的是"），直接说事。
 6. **作者**：始终为 `Hygen`
+7. **Tips 提示框**：遇到复杂概念、易错点、或值得延伸的知识时，用 blockquote + emoji 创建视觉突出的提示框：
+
+```markdown
+> 💡 **小贴士**：这里的关键在于把问题拆解为...
+
+> ⚠️ **注意**：空数组的情况需要特殊处理...
+
+> 🧠 **直觉理解**：想象你是一个股民，每天都有盈亏——前缀和就是你当前的累计收益...
+
+> 🔗 **延伸阅读**：这个算法的完整推导详见 [Kadane 算法详解](/posts/DSA/Knowledge/kadane/)
+```
+
+常用 emoji 搭配：💡（知识点/技巧）、⚠️（注意/陷阱）、🧠（直觉理解/比喻）、🔗（延伸阅读/引用链接）。提示框应简短有力，一个框讲一件事，不要塞入过多内容。
 
 ### LeetCode 题解专项要求（最重要）
 
@@ -249,7 +276,8 @@ posts/hot100/01-哈希/001.两数之和/index.md
 #### d. Hot100 vs 普通 Solution 的区别
 
 - **Hot100**：`category: hot100`，文件夹 `posts/hot100/{主题}/`，description 为 `Leetcode-<题号>`
-- **普通 Solution**：`category: Algorithm and Structure`，文件夹 `posts/Algorithm and Structure/Solution/`，description 可以更灵活
+- **DSA Solution**：`category: DSA`，文件夹 `posts/DSA/Solution/`，description 可以更灵活
+- **DSA Knowledge**：`category: DSA`，文件夹 `posts/DSA/Knowledge/{主题名}/`，description 为知识点的一句话说
 
 通过 LeetCode URL 判断：URL 含 `top-100-liked` 即为 Hot100。
 
@@ -303,7 +331,7 @@ git push
 
 **Commit 信息格式**（参考已有 git 记录）：
 - Hot100: `new blog hot100-<编号>`
-- Algorithm and Structure: `new blog AnS-<编号>` 或 `new blog Algorithm and Structure-<编号>`
+- DSA: `new blog DSA-<编号>` 或 `new blog DSA-knowledge-<主题>`
 - 其他: `new blog <简短描述>`
 
 推送前告知用户将要执行的操作，获得同意后再 push。
@@ -346,7 +374,8 @@ posts/{分类}/{文章标题}/
 在编写博客前，**必须先读取至少一篇同类型的已有博客**，确保风格一致：
 
 - 写 Hot100 博客前 → 读 `posts/hot100/` 下任意一篇 `index.md`
-- 写 Agent 博客前 → 读 `posts/Agent/LangGraph/` 下任意一篇
+- 写 DSA 题解/Solution 博客前 → 读 `posts/DSA/Solution/` 下任意一篇 `index.md`
+- 写 DSA 知识点/Knowledge 博客前 → 读 `posts/DSA/Knowledge/` 下任意一篇 `index.md`
 - 写 PyLearning 博客前 → 读 `posts/PyLearning/` 下任意一篇
 - 等等
 
